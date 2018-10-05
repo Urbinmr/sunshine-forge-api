@@ -5,9 +5,9 @@ exports.up = function (knex, Promise) {
         table.integer('memory_allocationmb')
         table.integer('disk_allocationmb')
         table.integer('space_id')
-            .unsigned()
             .references('id')
             .inTable('spaces')
+            .onDelete('CASCADE')
     })
 };
 
